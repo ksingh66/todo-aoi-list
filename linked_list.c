@@ -66,34 +66,3 @@ void linked_list_remove(node **head, int index){
     }
     
 }
-
-
-
-
-int main(){
-    node node1, node2, node3, node4;//Declares 4 nodes
-    node *head;//makes a pointer of type "node"/"linked list"
-
-    //here we use strcpy to give each element of each node a value(to do task)
-    strcpy(node1.element, "study test");
-    strcpy(node2.element, "do hw");
-    strcpy(node3.element, "exercise");
-    strcpy(node4.element, "read book");
-//Now we start assigning the order in which we want the linked list to work
-    head = &node1;//This line initializes a head node so that our linked_list related functions know where to start from
-//note that the node name has nothing to do with the order and that only the address that is assigned determines the order
-    node1.next_element_address = &node2;
-    node2.next_element_address = &node3;
-    node3.next_element_address = &node4;
-    node4.next_element_address = NULL; //node 4 marks the final node in our linked list
-    char task[] = "cry very loudly";
-    char *taskp = task;
-    print_linked_list(head); //here we just print our list
-    printf("\n");
-    linked_list_add(&head,taskp,3);
-    print_linked_list(head);
-    printf("\n");
-    linked_list_remove(&head,3);
-    print_linked_list(head);
-
-}
