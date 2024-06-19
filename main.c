@@ -12,6 +12,7 @@ int prompt_user(){
     printf("3. Remove a task\n");
     printf("4. Exit\n");
     scanf("%d",&user_input);
+    getchar(); 
     return(user_input);
 
 }
@@ -22,12 +23,21 @@ int main() {
     char task[20];
 
     printf("Welcome to the to-do list app\n");
+    printf("Start by adding your first task \n What would you like your first task to be?:\n");
+    fgets(task,19,stdin);
+    make_head(&head,task);
+    
     int input =prompt_user();
     while (input!= 4){
         switch (input){
             case (1):
             printf("Enter the new task: ");
             fgets(task,20, stdin);
+            printf("\n");
+            printf("Enter the position to insert the task: ");
+            scanf("%d", &index);
+            
+            linked_list_add(&head, task, index);
                  
             break;
 

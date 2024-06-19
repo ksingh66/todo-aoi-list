@@ -12,9 +12,10 @@ void print_linked_list(node *head){ //This function is to print all items in the
     }//When we assign the items in the list values we will have one of those items have a pointer to NULL.
 }
 
-void make_head(node **head){ //This function is to be used to make the first node 
+void make_head(node **head, const char *task){ //This function is to be used to make the first node 
     node *new_node= malloc(sizeof(node)); 
     new_node->next_element_address = NULL;
+    strcpy(new_node->element, task);
     *head = new_node;
 }
 

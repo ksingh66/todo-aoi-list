@@ -16,6 +16,6 @@ typedef struct linked_list node; //This line makes it so we can easily declare n
 void print_linked_list(node *head);
 void linked_list_add(node **head, const char *new_element, int index);
 void linked_list_remove(node **head, int index);
-void make_head(node **head);  
+void make_head(node **head, const char *task);  
 
 #endif // LINKED_LIST_H
