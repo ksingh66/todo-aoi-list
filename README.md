@@ -1,6 +1,8 @@
 # Plan for the project
 The idea is to *dynamically allocate memory* for each of the tasks in the to-do list.
 
+**To compile the program type "make" in the commandline**
+
 We will have 3 files **linked_list.h**,**linked_list.c** and lastly **main.c**
 ## Linked-list
 Linked-lists will be used to keep track of the order of the tasks.

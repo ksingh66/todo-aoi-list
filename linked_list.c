@@ -1,23 +1,22 @@
+//linked_list.c
+#include "linked_list.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>  
 
-struct linked_list // Basic linked list
-{//Our linked list has two attributes, a string 20 chars long named "element" and a pointer to the next item in the list
-    char element[20]; 
-    struct linked_list *next_element_address; // pointer name is "next_element_address" and the pointer type is the linked_list structure
-};
-typedef struct linked_list node; //This line makes it so we can easily declare nodes in our linked list (See the line right after main())
- 
 void print_linked_list(node *head){ //This function is to print all items in the linked list in the right order
     node *current_pointer = head; // This line creates a temp pointer which we use to print each element, We use temp pointer so that we do not change the head 
     while (current_pointer != NULL){ // We start with the head and work our way down to the last pointer which will be NULL
-        printf("%s ->\n",current_pointer->element); //This line prints the element at the current pointer
+        printf("%s\n",current_pointer->element); //This line prints the element at the current pointer
         current_pointer = current_pointer->next_element_address; // Now we increment the current pointer into the next pointer
     }//When we assign the items in the list values we will have one of those items have a pointer to NULL.
 }
 
-
+void make_head(node **head){ //This function is to be used to make the first node 
+    node *new_node= malloc(sizeof(node)); 
+    new_node->next_element_address = NULL;
+    *head = new_node;
+}
 
 void linked_list_add(node **head,const char *new_element, int index){ //We start by having three inputs, address of head , 
 //the element (task) we want to put and the index at which we want to put it
@@ -62,7 +61,5 @@ void linked_list_remove(node **head, int index){
     }
     node *node_to_del = pointer_before_index->next_element_address;
     pointer_before_index->next_element_address = node_to_del->next_element_address;
-    free(node_to_del);
-    }
-    
+    free(node_to_del);}
 }
