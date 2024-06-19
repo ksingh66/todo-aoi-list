@@ -51,12 +51,19 @@ void linked_list_add(node **head,const char *new_element, int index){ //We start
 
 void linked_list_remove(node **head, int index){
     node *pointer_before_index = *head;
+    node *old_head = *head;
+    if (index == 0) {
+        *head = (*head)->next_element_address;
+        free(old_head);
+    }
+    else{
     for (int count = 0;count<index-1 &&pointer_before_index != NULL;++count){
             pointer_before_index = pointer_before_index->next_element_address;
     }
     node *node_to_del = pointer_before_index->next_element_address;
     pointer_before_index->next_element_address = node_to_del->next_element_address;
     free(node_to_del);
+    }
     
 }
 
@@ -86,7 +93,7 @@ int main(){
     linked_list_add(&head,taskp,3);
     print_linked_list(head);
     printf("\n");
-    linked_list_remove(&head,0);
+    linked_list_remove(&head,3);
     print_linked_list(head);
 
 }
