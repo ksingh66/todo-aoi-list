@@ -19,5 +19,9 @@ A Linked list will be used as the data structure that represents each task. The 
  ![linked list add](https://github.com/user-attachments/assets/327c6169-9a0f-4a4d-89e1-9250afe754be)
 # Result
 The final program acts as a complete linked list, that is able to show tasks, add and remove tasks as well as swap two tasks.
+
+
 ![result](https://github.com/user-attachments/assets/47ea4e5c-c050-4941-873a-027a2ef67b02)
+
+
 # Thank you for your time
